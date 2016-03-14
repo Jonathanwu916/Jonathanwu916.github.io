@@ -467,23 +467,24 @@ body >header a {
   text-align: center;
   margin: auto;
   width: 86%;
-  font-family: "coveredbyyourgrace-webfont";
-  font-size: 220%;
-  line-height: 1.5;
+  font-family: "ReenieBeanie";
+  font-size: 250%;
+  line-height: 1;
+  margin-top: 0.1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 @media only screen and (min-width: 768px) {
   #textlogo h1.site-name {
-    margin-top: 0.4em;
-    font-size: 260%;
+    margin-top: 0.3em;
+    font-size: 300%;
   }
 }
 @media only screen and (min-width: 1024px) {
   #textlogo h1.site-name {
     margin-top: 0.4em;
-    font-size: 300%;
-    line-height: 1.5;
+    font-size: 380%;
+    line-height: 1;
   }
 }
 #textlogo h2.blog-motto {
@@ -1897,7 +1898,7 @@ section.comment {
   width: 6.875em;
   height: 6.875em;
   margin: 0 auto;
-  background: no-repeat url("../img/author.jpg") left top;
+  background: no-repeat url("../") left top;
   -webkit-background-size: 6.875em 6.875em;
   -moz-background-size: 6.875em 6.875em;
   background-size: 6.875em 6.875em;
@@ -2126,7 +2127,7 @@ footer {
   width: 6.875em;
   height: 6.875em;
   margin: 0 auto;
-  background: no-repeat url("../img/author.jpg") left top;
+  background: no-repeat url("../") left top;
   -webkit-background-size: 6.875em 6.875em;
   -moz-background-size: 6.875em 6.875em;
   background-size: 6.875em 6.875em;
@@ -2155,8 +2156,8 @@ footer {
 .copyright {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "coveredbyyourgrace-webfont";
-  font-size: 1.3em;
+  font-family: "ReenieBeanie";
+  font-size: 1.5em;
   width: 100%;
   color: #fff;
   text-align: center;
