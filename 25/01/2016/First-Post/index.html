@@ -11,16 +11,16 @@
     
 
     
-    <meta name="description" content="Hexo - Fastest blog framework">
+    <meta name="description" content="Hexo - Fastest blog frameworkI enjoy reading blogs. Sometimes, I got stuck on coding and the answer was found on someone’s blog instead of StackOverFlow.So, an idea come up to my mind - why don’t I ma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://jonathanwebs.com/25/01/2016/First-Post/index.html">
 <meta property="og:site_name" content="DevSite">
-<meta property="og:description" content="Hexo - Fastest blog framework">
-<meta property="og:updated_time" content="2016-03-14T11:52:09.679Z">
+<meta property="og:description" content="Hexo - Fastest blog frameworkI enjoy reading blogs. Sometimes, I got stuck on coding and the answer was found on someone’s blog instead of StackOverFlow.So, an idea come up to my mind - why don’t I ma">
+<meta property="og:updated_time" content="2016-03-15T03:07:53.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Hexo - Fastest blog framework">
+<meta name="twitter:description" content="Hexo - Fastest blog frameworkI enjoy reading blogs. Sometimes, I got stuck on coding and the answer was found on someone’s blog instead of StackOverFlow.So, an idea come up to my mind - why don’t I ma">
 <meta name="twitter:creator" content="@Jonathanwu916">
 
     
@@ -88,11 +88,45 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo_-_Fastest_blog_framework"><span class="toc-number">1.</span> <span class="toc-text">Hexo - Fastest blog framework</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo_-_Fastest_blog_framework"><span class="toc-number">1.</span> <span class="toc-text">Hexo - Fastest blog framework</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#How_to_set_it_up__3F"><span class="toc-number">1.0.1.</span> <span class="toc-text">How to set it up ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How_to_use_it_3F"><span class="toc-number">1.0.2.</span> <span class="toc-text">How to use it?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How_to_modify__2C_write_and_deploy_it__3F"><span class="toc-number">1.0.3.</span> <span class="toc-text">How to modify , write and  deploy it ?</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<h1 id="Hexo_-_Fastest_blog_framework"><a href="#Hexo_-_Fastest_blog_framework" class="headerlink" title="Hexo - Fastest blog framework"></a>Hexo - Fastest blog framework</h1>  
+		<h1 id="Hexo_-_Fastest_blog_framework"><a href="#Hexo_-_Fastest_blog_framework" class="headerlink" title="Hexo - Fastest blog framework"></a>Hexo - Fastest blog framework</h1><p>I enjoy reading blogs. Sometimes, I got stuck on coding and the answer was found on someone’s blog instead of <a href="http://stackoverflow.com" target="_blank" rel="external">StackOverFlow</a>.<br>So, an idea come up to my mind - why don’t I make a blog to share my experience?<br>After much searching and trying, there is one blog framework came into my sight - <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. It base on <a href="https://nodejs.org" target="_blank" rel="external">NodeJs</a>, and  allows you to deploy on <a href="http://github.com" target="_blank" rel="external">Github</a>. The most important thing is it was built up by a Taiwanese guy, which makes me feel intimate :grin: </p>
+<h3 id="How_to_set_it_up__3F"><a href="#How_to_set_it_up__3F" class="headerlink" title="How to set it up ?"></a>How to set it up ?</h3><ol>
+<li><p>Install git </p>
+<ul>
+<li>Windows: Download &amp; install <a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a>.</li>
+<li>Mac: Install it with <a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> or <a href="https://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">installer</a>.</li>
+<li><p>Linux (Ubuntu, Debian): </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Linux (Fedora, Red Hat, CentOS): </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install git-core</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>You should set up your github pages. If you do not know how to deploy your website in your github, click this - <a href="https://pages.github.com/" target="_blank" rel="external">github pages</a></p>
+</li>
+<li>Install <a href="https://nodejs.org" target="_blank" rel="external">Node.js</a></li>
+<li>Install Hexo - Once above requriments has been done, just one line code to install hexo.<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="How_to_use_it_3F"><a href="#How_to_use_it_3F" class="headerlink" title="How to use it?"></a>How to use it?</h3><ul>
+<li>Basically, the following coding is enough. Then type <em>localhost:4000</em>, you can see your blog running now.<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="How_to_modify__2C_write_and_deploy_it__3F"><a href="#How_to_modify__2C_write_and_deploy_it__3F" class="headerlink" title="How to modify , write and  deploy it ?"></a>How to modify , write and  deploy it ?</h3><p>You can go to [hexo configuration] to see the whole setting ways. I think there is no need to specify here.</p>
+<p>Generally, when I want to post a new article there are only 4 lines of code need to type in GitBash<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo post [layout] &lt;title&gt;</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>Let me explain what do they mean. </p>
+<ul>
+<li><code>$ hexo post [layout]&lt;title&gt;</code> means post a new article name by title.</li>
+<li><code>$ hexo g</code> means once you finish writing your blog, you type this for generating the files.</li>
+<li><code>$ hexo s</code> means you can test your blog on the local server.</li>
+<li><code>$ hexo d</code> means deploy your blog to your github pages.</li>
+</ul>
+<p>Broadly speaking, hexo is a quite powerful and lightweight framework. Base on nodejs means it won’t become slow after many articles been post.<br>If you have any query, you can contact me directly or go to the <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> to see more details.</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -105,7 +139,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Deployment/">Deployment</a>
+  <span></span> <a href="/tags/Framework/">Framework</a>
   </div>
 
 </div>
@@ -139,6 +173,13 @@
 
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo_-_Fastest_blog_framework"><span class="toc-number">1.</span> <span class="toc-text">Hexo - Fastest blog framework</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#How_to_set_it_up__3F"><span class="toc-number">1.0.1.</span> <span class="toc-text">How to set it up ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How_to_use_it_3F"><span class="toc-number">1.0.2.</span> <span class="toc-text">How to use it?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How_to_modify__2C_write_and_deploy_it__3F"><span class="toc-number">1.0.3.</span> <span class="toc-text">How to modify , write and  deploy it ?</span></a></li></ol></li></ol></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -177,7 +218,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Technology/" title="Technology">Technology<sup>2</sup></a></li>
+			<li><a href="/categories/Technology/" title="Technology">Technology<sup>3</sup></a></li>
 		  
 		
 		</ul>
@@ -190,7 +231,19 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Deployment/" title="Deployment">Deployment<sup>1</sup></a></li>
+				<li><a href="/tags/Framework/" title="Framework">Framework<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Kendo-Ui/" title="Kendo Ui">Kendo Ui<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ASP-NET-MVC/" title="ASP.NET MVC">ASP.NET MVC<sup>1</sup></a></li>
 			
 		
 			
@@ -200,6 +253,19 @@
 		</ul>
 </div>
 
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://aimyplus.com" target="_blank" title="Aimyplus">Aimyplus</a>
+            
+          </li>
+        
+    </ul>
+</div>
 
 </aside>
 </div>
@@ -261,6 +327,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -413,6 +481,35 @@ $(document).ready(function(){
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <!-- MathJax End -->
