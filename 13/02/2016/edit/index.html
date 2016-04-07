@@ -11,16 +11,30 @@
     
 
     
-    <meta name="description" content="Edit part in Kendo Ui gird">
+    <meta name="description" content="Edit part in Kendo Ui girdAs a web developer, you often need to make edit page for users. Recently, I have tried different ways to create edit page. Which truely help me learn a lot.
+Normal way wtih K">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Edit in Kendo ui grid">
 <meta property="og:url" content="http://jonathanwebs.com/13/02/2016/edit/index.html">
 <meta property="og:site_name" content="DevSite">
-<meta property="og:description" content="Edit part in Kendo Ui gird">
-<meta property="og:updated_time" content="2016-03-15T03:18:24.099Z">
+<meta property="og:description" content="Edit part in Kendo Ui girdAs a web developer, you often need to make edit page for users. Recently, I have tried different ways to create edit page. Which truely help me learn a lot.
+Normal way wtih K">
+<meta property="og:image" content="http://jonathanwebs.com/images/modelview.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/normaleditcontrollint.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/normaleditviewcoding.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/kendowindow.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/clickevent.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/Normal Edit.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/normaleditcontrollerpost.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/kendoeditviewcodetransport.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/kendoeditviewcodeschema.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/kendoeditcontroller.png">
+<meta property="og:image" content="http://jonathanwebs.com/images/kendoeditview.png">
+<meta property="og:updated_time" content="2016-04-07T11:39:49.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Edit in Kendo ui grid">
-<meta name="twitter:description" content="Edit part in Kendo Ui gird">
+<meta name="twitter:description" content="Edit part in Kendo Ui girdAs a web developer, you often need to make edit page for users. Recently, I have tried different ways to create edit page. Which truely help me learn a lot.
+Normal way wtih K">
 <meta name="twitter:creator" content="@Jonathanwu916">
 
     
@@ -88,11 +102,35 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Edit_part_in_Kendo_Ui_gird"><span class="toc-number">1.</span> <span class="toc-text">Edit part in Kendo Ui gird</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Edit_part_in_Kendo_Ui_gird"><span class="toc-number">1.</span> <span class="toc-text">Edit part in Kendo Ui gird</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal_way_wtih_Kendo_Window"><span class="toc-number">1.0.1.</span> <span class="toc-text">Normal way wtih Kendo Window</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using_Kendo_Grid_data_editing_function"><span class="toc-number">1.0.2.</span> <span class="toc-text">Using Kendo Grid data editing function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#To_sum_up"><span class="toc-number">1.0.3.</span> <span class="toc-text">To sum up</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<h1 id="Edit_part_in_Kendo_Ui_gird"><a href="#Edit_part_in_Kendo_Ui_gird" class="headerlink" title="Edit part in Kendo Ui gird"></a>Edit part in Kendo Ui gird</h1>  
+		<h1 id="Edit_part_in_Kendo_Ui_gird"><a href="#Edit_part_in_Kendo_Ui_gird" class="headerlink" title="Edit part in Kendo Ui gird"></a>Edit part in Kendo Ui gird</h1><p>As a web developer, you often need to make edit page for users. Recently, I have tried different ways to create edit page. Which truely help me learn a lot.</p>
+<h3 id="Normal_way_wtih_Kendo_Window"><a href="#Normal_way_wtih_Kendo_Window" class="headerlink" title="Normal way wtih Kendo Window"></a>Normal way wtih Kendo Window</h3><p>As beginning, I knew two ways to pop up edit page. One is using bootstrap modal, and another is Kendo Window. I choose the Kendo way as I am learning Kendo ui lately.<br>Considering I need to make a drop down list for category, I make a model firstly.</p>
+<p><img src="/images/modelview.png" alt="modelview"></p>
+<p>And the next is like most of you guys’ way - get the valuable data and make it display on the page.</p>
+<p><img src="/images/normaleditcontrollint.png" alt="normal edit controller screenshot"></p>
+<p>Then receive data on the view.</p>
+<p><img src="/images/normaleditviewcoding.png" alt="normal edit view code"></p>
+<p>How to make the page as pop up window? Using kendo windwo. Following steps are setting the kendo window up and set a click function to pass the information through right URL.</p>
+<p><img src="/images/kendowindow.png" alt="kendowindow"></p>
+<p><img src="/images/clickevent.png" alt="clickevent"></p>
+<p>Once you done above process, the edit page will show up once you click edit button.</p>
+<p><img src="/images/Normal Edit.png" alt="Normal Edit"></p>
+<p>Then we go to finish the rest part.</p>
+<p><img src="/images/normaleditcontrollerpost.png" alt="normal edit controller"></p>
+<p>Now, edit function can run correctly.</p>
+<h3 id="Using_Kendo_Grid_data_editing_function"><a href="#Using_Kendo_Grid_data_editing_function" class="headerlink" title="Using Kendo Grid data editing function"></a>Using Kendo Grid data editing function</h3><p>After I done the normal way, I heard some suggestions from my colleague. They recommand me to use data editing way in kendo grid. I tried it and looked greate!</p>
+<p>Because I have already passed all the valuable json data from controller before.So firstly, to set the Kendo grid up. Most important thing is datasource and schema.</p>
+<p><img src="/images/kendoeditviewcodetransport.png" alt="kendo edit view code transport"></p>
+<p><img src="/images/kendoeditviewcodeschema.png" alt="kendo edit view code schema"></p>
+<p>Then I just write the controller for saving data which has been edited.</p>
+<p><img src="/images/kendoeditcontroller.png" alt="kendo edit controller"></p>
+<p>Since then, edit page works perfectly. Looks similiar as following image.</p>
+<p><img src="/images/kendoeditview.png" alt="kendo edit"></p>
+<h3 id="To_sum_up"><a href="#To_sum_up" class="headerlink" title="To sum up"></a>To sum up</h3><p>My current project is base on Asp.Net MVC 4 and Kendo-ui. Because of some reasons, I cannot give all details for you.<br>Kendo ui is quite powerful through above case. Which makes web development faster easier and even more beautiful. Go to <a href="http://www.telerik.com/kendo-ui" target="_blank" rel="external">Telerik</a> if you are interested in it.</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -119,6 +157,13 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/24/02/2016/javascript/" title="OOP in javascript (1)">
+  <span>
+  OOP in javascript (1)</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/28/01/2016/Markdown/"  title="MarkDown">
@@ -143,7 +188,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Edit_part_in_Kendo_Ui_gird"><span class="toc-number">1.</span> <span class="toc-text">Edit part in Kendo Ui gird</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Edit_part_in_Kendo_Ui_gird"><span class="toc-number">1.</span> <span class="toc-text">Edit part in Kendo Ui gird</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Normal_way_wtih_Kendo_Window"><span class="toc-number">1.0.1.</span> <span class="toc-text">Normal way wtih Kendo Window</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using_Kendo_Grid_data_editing_function"><span class="toc-number">1.0.2.</span> <span class="toc-text">Using Kendo Grid data editing function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#To_sum_up"><span class="toc-number">1.0.3.</span> <span class="toc-text">To sum up</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
@@ -184,7 +229,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Technology/" title="Technology">Technology<sup>3</sup></a></li>
+			<li><a href="/categories/Technology/" title="Technology">Technology<sup>5</sup></a></li>
 		  
 		
 		</ul>
@@ -197,15 +242,19 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/OOP/" title="OOP">OOP<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Framework/" title="Framework">Framework<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Kendo-Ui/" title="Kendo Ui">Kendo Ui<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>1</sup></a></li>
 			
 		
 			

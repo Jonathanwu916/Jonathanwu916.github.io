@@ -1,0 +1,500 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>OOP in javascript (2) | DevSite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Jonathan">
+    
+
+    
+    <meta name="description" content="OOP in Javacript(2)3 ways to implement inheritance1. Prototype Chain way1234567891011121314151617181920212223242526272829303132function Parent() &amp;#123;        this.pv = &quot;parent&quot;;        this.color = [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OOP in javascript (2)">
+<meta property="og:url" content="http://jonathanwebs.com/27/02/2016/javascript2/index.html">
+<meta property="og:site_name" content="DevSite">
+<meta property="og:description" content="OOP in Javacript(2)3 ways to implement inheritance1. Prototype Chain way1234567891011121314151617181920212223242526272829303132function Parent() &amp;#123;        this.pv = &quot;parent&quot;;        this.color = [">
+<meta property="og:updated_time" content="2016-04-07T11:35:00.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OOP in javascript (2)">
+<meta name="twitter:description" content="OOP in Javacript(2)3 ways to implement inheritance1. Prototype Chain way1234567891011121314151617181920212223242526272829303132function Parent() &amp;#123;        this.pv = &quot;parent&quot;;        this.color = [">
+<meta name="twitter:creator" content="@Jonathanwu916">
+
+    
+    <link rel="alternative" href="atom.xml" title="DevSite" type="application/atom+xml">
+    
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="DevSite">DevSite</a></h1>
+				<h2 class="blog-motto">If you don&#39;t succeed the first time , call it version 1.0</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:jonathanwebs.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/27/02/2016/javascript2/" title="OOP in javascript (2)" itemprop="url">OOP in javascript (2)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Jonathan" target="_blank" itemprop="author">Jonathan</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-27T09:36:33.000Z" itemprop="datePublished"> Published 27-02-2016</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OOP_in_Javacript_282_29"><span class="toc-number">1.</span> <span class="toc-text">OOP in Javacript(2)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3_ways_to_implement_inheritance"><span class="toc-number">1.0.1.</span> <span class="toc-text">3 ways to implement inheritance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_Prototype_Chain_way"><span class="toc-number">1.0.2.</span> <span class="toc-text">1. Prototype Chain way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_Using_call"><span class="toc-number">1.0.3.</span> <span class="toc-text">2. Using call</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_Complex_way"><span class="toc-number">1.0.4.</span> <span class="toc-text">3. Complex way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#In_Conclusion"><span class="toc-number">1.0.5.</span> <span class="toc-text">In Conclusion</span></a></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="OOP_in_Javacript_282_29"><a href="#OOP_in_Javacript_282_29" class="headerlink" title="OOP in Javacript(2)"></a>OOP in Javacript(2)</h1><h3 id="3_ways_to_implement_inheritance"><a href="#3_ways_to_implement_inheritance" class="headerlink" title="3 ways to implement inheritance"></a>3 ways to implement inheritance</h3><h3 id="1-_Prototype_Chain_way"><a href="#1-_Prototype_Chain_way" class="headerlink" title="1. Prototype Chain way"></a>1. Prototype Chain way</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.pv = <span class="string">"parent"</span>;</span><br><span class="line">        <span class="keyword">this</span>.color = [<span class="string">"red"</span>,<span class="string">"yellow"</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    Parent.prototype.pp = <span class="string">"ok"</span>;</span><br><span class="line">    Parent.prototype.showParentValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.pv);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">this</span>.cv = <span class="string">"child"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Child.prototype = <span class="keyword">new</span> Parent();</span><br><span class="line">    </span><br><span class="line">    Child.prototype.showChildValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.cv);</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">     <span class="comment">//Override base object</span></span><br><span class="line"></span><br><span class="line">    Child.prototype.showParentValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"override parent"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> c1 = <span class="keyword">new</span> Child();</span><br><span class="line">    <span class="comment">//The prototype of color has been modified. </span></span><br><span class="line">    c1.color.push(<span class="string">"blue"</span>);</span><br><span class="line">    alert(c1.color);<span class="comment">//red,yellow blue</span></span><br><span class="line">    <span class="keyword">var</span> c2 = <span class="keyword">new</span> Child();</span><br><span class="line">    alert(c2.color);<span class="comment">//red yellow blue</span></span><br></pre></td></tr></table></figure>
+<p>The biggist disvantage of prototype chain way is cannot call bases’ constructor in child class. As we cannot assign property value from derived to base.<br>The second one is if changing the reference type data property on first instance of derived class, the others has been modified at the same time.</p>
+<p>We normally do not use this way to implement inheritance.</p>
+<h3 id="2-_Using_call"><a href="#2-_Using_call" class="headerlink" title="2. Using call"></a>2. Using call</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.color = [<span class="string">"red"</span>,<span class="string">"blue"</span>];</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        Parent.call(<span class="keyword">this</span>,name);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> c1 = <span class="keyword">new</span> Child(<span class="string">"Jonathan"</span>,<span class="number">25</span>);</span><br><span class="line">    <span class="keyword">var</span> c2 = <span class="keyword">new</span> Child(<span class="string">"Lainey"</span>,<span class="number">21</span>);</span><br><span class="line">    c1.say();</span><br><span class="line">    c2.say();</span><br></pre></td></tr></table></figure>
+<p>In this way, every objects has the say function. It takes too many spaces. So we may not use this way either.</p>
+<h3 id="3-_Complex_way"><a href="#3-_Complex_way" class="headerlink" title="3. Complex way"></a>3. Complex way</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.color = [<span class="string">"red"</span>,<span class="string">"blue"</span>];</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.ps = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name+<span class="string">"["</span>+<span class="keyword">this</span>.color+<span class="string">"]"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">    Parent.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = <span class="keyword">new</span> Parent();</span><br><span class="line">Child.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name+<span class="string">","</span>+<span class="keyword">this</span>.age+<span class="string">"["</span>+<span class="keyword">this</span>.color+<span class="string">"]"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Child(<span class="string">"Jonathan"</span>,<span class="number">25</span>);</span><br><span class="line">c1.color.push(<span class="string">"green"</span>);</span><br><span class="line">c1.say();<span class="comment">//Jonathan,25[red,blue,green]</span></span><br><span class="line">c1.ps();<span class="comment">//Jonathan[red,blue,green]</span></span><br><span class="line"><span class="keyword">var</span> c2 = <span class="keyword">new</span> Child(<span class="string">"Lainey"</span>,<span class="number">21</span>);</span><br><span class="line">c2.say();<span class="comment">//Lainey,21[red,blue]</span></span><br><span class="line">c2.ps();<span class="comment">//Lainey,[red,blue]</span></span><br></pre></td></tr></table></figure>
+<p>We inherit property through call method, and inherit method through prototype chain. In think which is the best way to implement inheritance.</p>
+<h3 id="In_Conclusion"><a href="#In_Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h3><p>Above cases are the ways to inherit and apparently last one is the best way. It is interesting to implement OOP in javascript. Because there are always mutiple ways to learn. It means you are more likely to create amazing things.</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Technology/">Technology</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Javascript/">Javascript</a><a href="/tags/OOP/">OOP</a>
+  </div>
+
+</div>
+
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/24/02/2016/javascript/"  title="OOP in javascript (1)">
+ <span>OOP in javascript (1)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OOP_in_Javacript_282_29"><span class="toc-number">1.</span> <span class="toc-text">OOP in Javacript(2)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3_ways_to_implement_inheritance"><span class="toc-number">1.0.1.</span> <span class="toc-text">3 ways to implement inheritance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_Prototype_Chain_way"><span class="toc-number">1.0.2.</span> <span class="toc-text">1. Prototype Chain way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_Using_call"><span class="toc-number">1.0.3.</span> <span class="toc-text">2. Using call</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_Complex_way"><span class="toc-number">1.0.4.</span> <span class="toc-text">3. Complex way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#In_Conclusion"><span class="toc-number">1.0.5.</span> <span class="toc-text">In Conclusion</span></a></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+<div id="authorInfo">
+	
+	<div class="social-info" class="clearfix">
+		
+		
+		<a href="https://github.com/jonathanwu916" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/Jonathanwu916" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/JonathanWu916" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/jonathanwu916" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		
+		
+		
+		<a href="mailto:hi@jonathanwebs.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+
+	</div>
+</div>
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Technology/" title="Technology">Technology<sup>5</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Javascript/" title="Javascript">Javascript<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/OOP/" title="OOP">OOP<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Framework/" title="Framework">Framework<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Kendo-Ui/" title="Kendo Ui">Kendo Ui<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ASP-NET-MVC/" title="ASP.NET MVC">ASP.NET MVC<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://aimyplus.com" target="_blank" title="Aimyplus">Aimyplus</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+		
+		
+
+		<p class="copyright">
+		© 2016 
+		
+		<a href="/about" target="_blank" title="Jonathan">Jonathan</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'jonathanwu916';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
